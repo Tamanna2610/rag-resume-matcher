@@ -1,5 +1,9 @@
-sentence-transformers
+pypdf
+numpy<2
+transformers==4.39.3
+sentence-transformers==2.7.0
 chromadb
 anthropic
 streamlit
 python-dotenv
+torch==2.2.2

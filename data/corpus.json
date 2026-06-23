@@ -1,0 +1,62 @@
+[
+  {
+    "id": "chunk_000",
+    "category": "experience",
+    "title": "Undergraduate Researcher \u2013 CIVS at Purdue University Northwest",
+    "text": "Undergraduate Researcher \u2013 CIVS at Purdue University Northwest Nov 2025 \u2013 Present | Hammond, IN \u2022 Accelerated end-to-end CV model training and evaluation cycles as part of ongoing research and development work, annotating image datasets, building preprocessing pipelines, and fine-tuning CNN-based architectures using Python and Roboflow; iterated on hyperparameter configurations to optimize model convergence. \u2022 Improved experiment reproducibility by maintaining structured model cards documenting preprocessing steps, architecture configs, hyperparameter settings, and evaluation metrics (accuracy, loss curves) across all training runs."
+  },
+  {
+    "id": "chunk_001",
+    "category": "experience",
+    "title": "Machine Learning Intern \u2013 Poonawalla Fincorp",
+    "text": "Machine Learning Intern \u2013 Poonawalla Fincorp Jun \u2013 Jul 2025 | Mumbai, India \u2022 Engineered features from 50K+ credit records (delinquency ratios, credit utilization, payment history) and built scikit-learn classification pipelines, training Logistic Regression, Random Forest, and Gradient Boosting models with grid search hyperparameter optimization, achieving AUC of 0.87 and KS of 42. \u2022 Operationalized model monitoring by applying product design thinking to build Power BI dashboards to track KPIs, score distributions, and model drift indicators in production, enabling data-driven credit policy decisions by stakeholders."
+  },
+  {
+    "id": "chunk_002",
+    "category": "experience",
+    "title": "IT Intern \u2013 Sodel Solutions",
+    "text": "IT Intern \u2013 Sodel Solutions Jun \u2013 Jul 2024 | Navi Mumbai, India \u2022 Reduced ETL pipeline failures by 15% by refactoring SQL queries, implementing automated schema validation, and adding data quality checks across ingestion workflows, improving downstream data reliability. \u2022 Improved data pipeline throughput by 20% by streamlining preprocessing logic, eliminating redundant transformation steps, and standardizing batch processing workflows for faster data load times."
+  },
+  {
+    "id": "chunk_003",
+    "category": "experience",
+    "title": "Data Analytics Intern \u2013 KPMG",
+    "text": "Data Analytics Intern \u2013 KPMG May \u2013 Jul 2023 | Mumbai, India \u2022 Reduced manual reporting turnaround by 30% by automating data validation and statistical analysis workflows using Python and SQL, integrating automated anomaly detection and outlier flagging. \u2022 Improved analytics reproducibility and auditability by standardizing KPI definitions, metric documentation, and testing procedures across client consulting engagements using structured reporting templates."
+  },
+  {
+    "id": "chunk_004",
+    "category": "experience",
+    "title": "Tutor \u2013 PNW Student Academic Support Centre",
+    "text": "Tutor \u2013 PNW Student Academic Support Centre Aug 2023 \u2013 May 2026 | Hammond, IN \u2022 Improved student exam performance by 20% on average through targeted tutoring in Mathematics, Computer Science, and Statistics, adapting problem-solving strategies to individual learning gaps."
+  },
+  {
+    "id": "chunk_005",
+    "category": "project",
+    "title": "AI Safety \u2013 Backdoor Attack Research (BATT) 2025",
+    "text": "AI Safety \u2013 Backdoor Attack Research (BATT) 2025 \u2022 Reproduced 'BATT: Backdoor Attack with Transformation-Based Triggers' using PyTorch; implemented rotation(16 degrees) and translation (6px) geometric triggers on CIFAR-10 with a ResNet-18 classifier, achieving ASR of 98.9% and 99.67% respectively at a 5% poisoning rate. \u2022 Benchmarked BATT against the BadNets baseline across benign accuracy and attack success rate; demonstrated that geometric transformation triggers are stealthier and more effective than static pixel patches, with all attacks maintaining benign accuracy within 0.5% of the clean model(76.28%)."
+  },
+  {
+    "id": "chunk_006",
+    "category": "project",
+    "title": "ID vs OOD Performance Prediction 2025",
+    "text": "ID vs OOD Performance Prediction 2025 \u2022 Extended 'Agreement on the Line' paper by replacing its linear ID - OOD assumption with custom nonlinear neural regression models and Bayesian uncertainty estimation on CIFAR-10 and ImageNet, improving OOD performance prediction reliability. \u2022 Demonstrated that uncertainty-aware nonlinear models better capture distribution shift dynamics, contributing insights toward building more generalizable and reliable ML systems."
+  },
+  {
+    "id": "chunk_007",
+    "category": "project",
+    "title": "Heart Disease Risk Prediction 2025",
+    "text": "Heart Disease Risk Prediction 2025 \u2022 Trained and benchmarked 6 classifiers (Logistic Regression, Decision Tree, SVM, KNN, Random Forest, Neural Network) with hyperparameter tuning and AUC/F1 evaluation on a multi-state healthcare dataset; performed EDA, feature selection, and cross-validation to identify the best model for early detection. \u2022 Compared model interpretability vs. predictive performance trade-offs across classical ML and neural approaches, selecting optimal architecture for deployment in a healthcare decision-support context."
+  },
+  {
+    "id": "chunk_008",
+    "category": "project",
+    "title": "MNIST Classifier",
+    "text": "MNIST Classifier 2025 \u2022 Achieved 98% test accuracy on 70K+ images using Logistic Regression with L2 regularization, batch processing, and stratified k-fold cross-validation to maximize generalization on held-out data. \u2022 Applied feature normalization and systematic hyperparameter tuning to optimize model performance, validating results against a held-out test set using accuracy and confusion matrix metrics."
+  },
+  {
+    "id": "chunk_009",
+    "category": "project",
+    "title": "Microsoft Stock Price Prediction \u2013 LSTM Neural Network",
+    "text": "Microsoft Stock Price Prediction \u2013 LSTM Neural Network 2025 \u2022 Built a stacked LSTM neural network in TensorFlow/Keras to forecast Microsoft closing prices using a 60-day sliding window sequence; applied StandardScaler normalization, Dropout regularization, and Adam optimizer with MSE loss over 20 epochs. \u2022 Performed EDA including open/close trend analysis, volume visualization, and feature correlation heatmap; enforced strict temporal train/ test split (95/5) to prevent data leakage in time series forecasting"
+  }
+]
