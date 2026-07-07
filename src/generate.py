@@ -1,7 +1,9 @@
 import requests
 from retrieve import retrieve_relevant_chunks
 
-OLLAMA_URL = "http://localhost:11434/api/generate"
+import os
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "localhost")
+OLLAMA_URL = f"http://{OLLAMA_HOST}:11434/api/generate"
 MODEL_NAME = "llama3.2:1b"  
 
 def generate_tailored_bullets(job_description, top_k=4):

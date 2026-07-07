@@ -9,11 +9,14 @@ from parser import extract_text_from_resume
 from chunker import build_corpus
 import chromadb
 from sentence_transformers import SentenceTransformer
-import requests
+from groq import Groq
+from dotenv import load_dotenv
+
+load_dotenv()
 
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "llama3.2:1b"
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_MODEL = "llama-3.3-70b-versatile"
 
 st.set_page_config(page_title="ResumeRAG", page_icon="📄")
 st.title("📄 ResumeRAG")
@@ -25,7 +28,7 @@ def load_embed_model():
 
 def build_session_vectorstore(corpus):
     """Builds a fresh, temporary in-memory vector store for this session only."""
-    client = chromadb.EphemeralClient()  # in-memory, not saved to disk
+    client = chromadb.EphemeralClient()
     collection = client.create_collection("session_resume")
 
     model = load_embed_model()
@@ -53,21 +56,29 @@ def retrieve_chunks(collection, job_description, top_k=4):
 
 def generate_bullets(job_description, chunks):
     context = "\n\n".join([f"{c['title']}:\n{c['text']}" for c in chunks])
-    prompt = f"""You are a resume-writing assistant. A candidate has the following relevant experience:
+
+    client = Groq(api_key=GROQ_API_KEY)
+    response = client.chat.completions.create(
+        model=GROQ_MODEL,
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a resume-writing assistant. Write tailored resume bullets based only on the experience provided. Keep all facts and metrics accurate — do not invent anything."
+            },
+            {
+                "role": "user",
+                "content": f"""The candidate has the following relevant experience:
 
 {context}
 
 Here is the job description they're applying to:
 {job_description}
 
-Based ONLY on the experience provided above, write 3-4 tailored resume bullet points that highlight the most relevant parts of this candidate's background for this specific job. Keep the original facts/metrics accurate -- do not invent numbers or skills not mentioned. Use strong action verbs and quantify impact where the original text already does."""
-
-    response = requests.post(OLLAMA_URL, json={
-        "model": OLLAMA_MODEL,
-        "prompt": prompt,
-        "stream": False
-    })
-    return response.json()["response"]
+Write 3-4 tailored resume bullet points that highlight the most relevant parts of this candidate's background for this specific job. Use strong action verbs and quantify impact where the original text already does."""
+            }
+        ]
+    )
+    return response.choices[0].message.content
 
 # --- UI ---
 
