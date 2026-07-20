@@ -4,4 +4,3 @@ chromadb
 streamlit
 python-dotenv
 groq
-torch
