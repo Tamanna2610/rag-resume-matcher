@@ -1,0 +1,5 @@
+{
+  "prompt_injection": true,
+  "retrieval_poisoning": true,
+  "context_manipulation": true
+}

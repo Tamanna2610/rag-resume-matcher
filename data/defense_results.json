@@ -1,0 +1,5 @@
+{
+  "prompt_injection_defended": true,
+  "retrieval_poisoning_defended": true,
+  "context_manipulation_defended": false
+}
